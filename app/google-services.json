@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "483541877080",
+    "firebase_url": "https://chatty-5d428.firebaseio.com",
+    "project_id": "chatty-5d428",
+    "storage_bucket": "chatty-5d428.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483541877080:android:20202bcc745767f6de652d",
+        "android_client_info": {
+          "package_name": "com.proxima.chatty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "483541877080-s7gdr0311r7dvm4p0l30g9h63ull9duh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.proxima.chatty",
+            "certificate_hash": "aea02864b14e370dcaefb27fca8a04b23cbc92a0"
+          }
+        },
+        {
+          "client_id": "483541877080-ksgrvegf63hfv8rsdjaod1iqlmmcuf4e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVrgmRIhR0aw1QnZAhNSIc-5JH6sF2CDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483541877080-ksgrvegf63hfv8rsdjaod1iqlmmcuf4e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
