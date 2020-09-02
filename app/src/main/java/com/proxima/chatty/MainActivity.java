@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 textView.setBackgroundResource(R.drawable.border);
                 textView.setTextSize(15);
 
-                conversation.add(FirebaseTextMessage.createForLocalUser(edtMsg.getText().toString(), System.currentTimeMillis()));
-                conversation.add(FirebaseTextMessage.createForRemoteUser(edtMsg.getText().toString(), System.currentTimeMillis(), "8448338860"));
+                conversation.add(FirebaseTextMessage.createForLocalUser(edtMsg.getText().toString(), System.currentTimeMillis()));                      //Whenever the user sends a message, add the message and its timestamp to the conversation history
+                conversation.add(FirebaseTextMessage.createForRemoteUser(edtMsg.getText().toString(), System.currentTimeMillis(), "8448338860"));   //Whenever the user receives a message, add the message, its timestamp, and the sender's user ID to the conversation history.  The user ID can be any string that uniquely identifies the sender within the conversation
 
                 params.gravity = Gravity.END;           // when user enters the text appears at the right most
                 textView.setLayoutParams(params);
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 linearLayout.addView(textView);
                 FirebaseApp.initializeApp(MainActivity.this);
 
+                //To generate smart replies to a message, get an instance of SmartReplyGenerator and pass the conversation history to its suggestReplies() method:
                 FirebaseSmartReply smartReply = FirebaseNaturalLanguage.getInstance().getSmartReply();
                 smartReply.suggestReplies(conversation)
                         .addOnSuccessListener(new OnSuccessListener<SmartReplySuggestionResult>() {
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                                 else if (result.getStatus() == SmartReplySuggestionResult.STATUS_SUCCESS) {
                                     // Task completed successfully
 
+                                    //If the operation succeeds, a SmartReplySuggestionResult object is passed to the success handler. This object contains a list of up to three suggested replies, which you can present to your user:
                                     String replyText="";
                                     for (SmartReplySuggestion suggestion : result.getSuggestions()) {
                                         replyText = suggestion.getText();
